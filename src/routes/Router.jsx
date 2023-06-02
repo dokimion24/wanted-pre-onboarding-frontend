@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import SigninPage from "../page/SigninPage";
 import SignupPage from "../page/SignupPage";
 import TodoPage from "../page/Todo";
-import Layout from "../components/Common";
+import Layout from "../components/Common/Layout";
 
 function Router() {
   return (
