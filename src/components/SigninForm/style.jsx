@@ -17,6 +17,7 @@ export const SigninText = styled.div`
 `;
 
 export const InputArea = styled.div`
+  height: 80px;
   margin-bottom: 16px;
   display: flex;
   flex-direction: column;
@@ -32,6 +33,7 @@ export const Label = styled.label`
 export const Input = styled.input`
   width: 100%;
   height: 40px;
+  margin-bottom: 4px;
 
   &:focus {
   }
@@ -40,4 +42,10 @@ export const Input = styled.input`
 export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: end;
+`;
+
+export const ErrorMessage = styled.div`
+  width: 100%;
+  font-size: 12px;
+  color: #d9381e;
 `;
