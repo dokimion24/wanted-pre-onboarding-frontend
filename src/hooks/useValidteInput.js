@@ -1,18 +1,11 @@
 export function useValidateInput() {
-  const validateInput = (id, value) => {
-    const validInput = {
-      email: false,
-      password: false,
-    };
-
+  const validateInput = (id, value, isValidInput) => {
     if (id === "email") {
       const pattern = /@/;
-      return { ...validInput, [id]: pattern.test(value) };
+      return { ...isValidInput, [id]: pattern.test(value) };
     } else if (id === "password") {
-      return { ...validInput, [id]: value.length >= 8 };
+      return { ...isValidInput, [id]: value.length >= 8 };
     }
-
-    return validInput;
   };
 
   return validateInput;
