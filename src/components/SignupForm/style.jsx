@@ -41,3 +41,9 @@ export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: end;
 `;
+
+export const ErrorMessage = styled.div`
+  width: 100%;
+  font-size: 12px;
+  color: #d9381e;
+`;
