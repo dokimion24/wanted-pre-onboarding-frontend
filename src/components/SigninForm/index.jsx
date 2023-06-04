@@ -45,6 +45,7 @@ function SigninForm() {
         <S.Label htmlFor="password">비밀번호</S.Label>
         <S.Input
           id="password"
+          type="password"
           onChange={handleChange}
           value={userInput.password}
           data-testid="password-input"
