@@ -5,10 +5,12 @@ import * as S from "./style";
 
 function TodoItem({ todo, setIsChanged }) {
   const [isClickedUpdateBtn, setIsClickedUpdateBtn] = useState(false);
+  const [newTodo, setNewTodo] = useState(`${todo.todo}`);
+  const [isChecked, setIsChecked] = useState(todo.isCompleted);
 
-  const handleChangeCompleted = async (todo) => {
-    await updateTodo(todo);
-    setIsChanged((prev) => !prev);
+  const handleChangeCompleted = async (todo, isCompleted, id) => {
+    await updateTodo(todo, !isCompleted, id);
+    setIsChecked((prev) => !prev);
   };
 
   const handleClickDelete = async (id) => {
@@ -17,22 +19,33 @@ function TodoItem({ todo, setIsChanged }) {
     setIsChanged((prev) => !prev);
   };
 
-  const handleChange = () => {};
+  const handleChange = (e) => {
+    setNewTodo(e.target.value);
+  };
+
+  const handleClickUpdate = async (todo, isCompleted, id) => {
+    const res = await updateTodo(todo, isCompleted, id);
+    console.log(res);
+    setIsChanged((prev) => !prev);
+    setIsClickedUpdateBtn((prev) => !prev);
+  };
 
   return (
     <S.Todo>
       <label>
         <input
           type="checkbox"
-          checked={todo.isCompleted}
-          onChange={() => handleChangeCompleted(todo)}
+          checked={isChecked}
+          onChange={() =>
+            handleChangeCompleted(todo.todo, todo.isCompleted, todo.id)
+          }
         />
         {isClickedUpdateBtn ? (
           <>
             <S.Input
               data-testid="modify-input"
               onChange={handleChange}
-              value={todo.todo}
+              value={newTodo}
             />
           </>
         ) : (
@@ -41,7 +54,13 @@ function TodoItem({ todo, setIsChanged }) {
       </label>
       {isClickedUpdateBtn ? (
         <S.ButtonWrapper>
-          <Button data-testid="submit-button">제출</Button>
+          <Button
+            onClick={() =>
+              handleClickUpdate(newTodo, todo.isCompleted, todo.id)
+            }
+            data-testid="submit-button">
+            제출
+          </Button>
           <Button
             onClick={() => setIsClickedUpdateBtn((prev) => !prev)}
             data-testid="cancel-button">
