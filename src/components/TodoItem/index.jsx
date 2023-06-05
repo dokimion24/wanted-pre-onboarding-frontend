@@ -5,7 +5,7 @@ import * as S from "./style";
 
 function TodoItem({ todo, setIsChanged }) {
   const [isClickedUpdateBtn, setIsClickedUpdateBtn] = useState(false);
-  const [newTodo, setNewTodo] = useState(`${todo.todo}`);
+  const [newTodo, setNewTodo] = useState(todo.todo);
   const [isChecked, setIsChecked] = useState(todo.isCompleted);
 
   const handleChangeCompleted = async (todo, isCompleted, id) => {
@@ -27,6 +27,11 @@ function TodoItem({ todo, setIsChanged }) {
     const res = await updateTodo(todo, isCompleted, id);
     console.log(res);
     setIsChanged((prev) => !prev);
+    setIsClickedUpdateBtn((prev) => !prev);
+  };
+
+  const handleClickCancel = () => {
+    setNewTodo(todo.todo);
     setIsClickedUpdateBtn((prev) => !prev);
   };
 
@@ -61,9 +66,7 @@ function TodoItem({ todo, setIsChanged }) {
             data-testid="submit-button">
             제출
           </Button>
-          <Button
-            onClick={() => setIsClickedUpdateBtn((prev) => !prev)}
-            data-testid="cancel-button">
+          <Button onClick={handleClickCancel} data-testid="cancel-button">
             취소
           </Button>
         </S.ButtonWrapper>
