@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "../../styles/common";
-import { AiOutlinePlus } from "react-icons/ai";
 import * as S from "./style";
 
 function TodoHeader() {
@@ -8,10 +7,8 @@ function TodoHeader() {
     <S.Container>
       <S.Header>Todolist</S.Header>
       <S.InputArea>
-        <S.Input type="text" />
-        <Button>
-          <AiOutlinePlus />
-        </Button>
+        <S.Input type="text" data-testid="new-todo-input" />
+        <Button data-testid="new-todo-add-button">추가</Button>
       </S.InputArea>
     </S.Container>
   );
