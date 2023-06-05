@@ -21,3 +21,17 @@ export const createTodo = async (todo) => {
     return error;
   }
 };
+
+export const updateTodo = async (todo) => {
+  try {
+    const res = await axiosInstance.put(`/todos/${todo.id}`, {
+      todo: todo.todo,
+      isCompleted: !todo.isCompleted,
+    });
+    console.log(res);
+    return res.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
