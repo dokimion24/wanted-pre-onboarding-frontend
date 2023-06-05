@@ -35,3 +35,14 @@ export const updateTodo = async (todo) => {
     return error;
   }
 };
+
+export const deleteTodo = async (id) => {
+  try {
+    const res = await axiosInstance.delete(`/todos/${id}`);
+    console.log(res);
+    return res.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
