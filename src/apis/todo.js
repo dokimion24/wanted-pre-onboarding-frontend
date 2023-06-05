@@ -22,11 +22,11 @@ export const createTodo = async (todo) => {
   }
 };
 
-export const updateTodo = async (todo) => {
+export const updateTodo = async (todo, isCompleted, id) => {
   try {
-    const res = await axiosInstance.put(`/todos/${todo.id}`, {
-      todo: todo.todo,
-      isCompleted: !todo.isCompleted,
+    const res = await axiosInstance.put(`/todos/${id}`, {
+      todo,
+      isCompleted,
     });
     console.log(res);
     return res.data;
