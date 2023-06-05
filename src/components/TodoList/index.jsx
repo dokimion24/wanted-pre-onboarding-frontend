@@ -1,15 +1,24 @@
 import React from "react";
 import * as S from "./style";
 import { Button } from "../../styles/common";
+import { updateTodo } from "../../apis/todo";
 
-function TodoList({ todos }) {
-  console.log(todos.todo);
+function TodoList({ todos, setIsChanged }) {
+  const handleChangeCompleted = async (todo) => {
+    await updateTodo(todo);
+    setIsChanged((prev) => !prev);
+  };
+
   return (
     <ul>
       {todos.map((todo) => (
         <S.Todo key={todo.id}>
           <label>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              checked={todo.isCompleted}
+              onChange={() => handleChangeCompleted(todo)}
+            />
             <span>{todo.todo}</span>
           </label>
           <S.ButtonWrapper>
