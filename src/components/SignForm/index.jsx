@@ -3,13 +3,14 @@ import * as S from "./style";
 import { AiOutlineLogin } from "react-icons/ai";
 import { Button } from "../../styles/common";
 import { useValidateInput } from "../../hooks/useValidteInput";
-import { signupUser } from "../../apis/auth";
+import { signupUser, signinUser } from "../../apis/auth";
+
 import { useRedirect } from "../../hooks/useRedirect";
 
-function SigninForm() {
+function SignForm({ signin }) {
   const validateInput = useValidateInput();
   const redirect = useRedirect();
-  
+
   const [userInput, setUserInput] = useState({ email: "", password: "" });
   const [isValidInput, setIsValidInput] = useState({
     email: false,
@@ -29,8 +30,10 @@ function SigninForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await signupUser(userInput);
-    console.log(res);
+
+    const res = signin
+      ? await signinUser(userInput)
+      : await signupUser(userInput);
     redirect(res);
   };
 
@@ -70,11 +73,11 @@ function SigninForm() {
           type="submit"
           disabled={!isValidInput.email || !isValidInput.password}
           data-testid="signin-button">
-          로그인
+          {signin ? "로그인" : "회원가입"}
         </Button>
       </S.ButtonWrapper>
     </S.Form>
   );
 }
 
-export default SigninForm;
+export default SignForm;

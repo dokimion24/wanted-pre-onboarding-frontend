@@ -1,11 +1,11 @@
 import React from "react";
-import SigninForm from "../../components/SigninForm";
 import * as S from "./style";
+import SignForm from "../../components/SignForm";
 
 function SigninPage() {
   return (
     <S.Wrapper>
-      <SigninForm />
+      <SignForm signin={true} />
     </S.Wrapper>
   );
 }

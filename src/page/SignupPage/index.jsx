@@ -1,11 +1,11 @@
 import React from "react";
-import SignupForm from "../../components/SignupForm";
 import * as S from "./style";
+import SignForm from "../../components/SignForm";
 
 function SignupPage() {
   return (
     <S.Wrapper>
-      <SignupForm />
+      <SignForm />
     </S.Wrapper>
   );
 }
