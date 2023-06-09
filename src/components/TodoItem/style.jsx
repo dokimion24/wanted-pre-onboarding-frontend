@@ -2,16 +2,18 @@ import styled from "styled-components";
 
 export const Todo = styled.li`
   display: flex;
-  height: 32px;
+  height: 48px;
   margin-bottom: 8px;
   justify-content: space-between;
   align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 `;
 
 export const ButtonWrapper = styled.div`
   width: 90px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 
 export const InputArea = styled.div`
