@@ -4,17 +4,17 @@ import { AiOutlineLogin } from "react-icons/ai";
 import { Button } from "../../styles/common";
 import { useValidateInput } from "../../hooks/useValidteInput";
 import { signupUser } from "../../apis/auth";
-import { useNavigate } from "react-router-dom";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function SigninForm() {
   const validateInput = useValidateInput();
+  const redirect = useRedirect();
+  
   const [userInput, setUserInput] = useState({ email: "", password: "" });
   const [isValidInput, setIsValidInput] = useState({
     email: false,
     password: false,
   });
-
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     // console.log(e.target);
@@ -31,12 +31,7 @@ function SigninForm() {
     e.preventDefault();
     const res = await signupUser(userInput);
     console.log(res);
-    if (res.status === 201) {
-      alert("회원가입 성공");
-      navigate("/signin");
-    } else {
-      alert(`${res.response.data.message}`);
-    }
+    redirect(res);
   };
 
   return (
