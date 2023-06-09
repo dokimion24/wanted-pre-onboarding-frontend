@@ -3,25 +3,17 @@ import TodoHeader from "../../components/TodoHeader";
 import * as S from "./style";
 import TodoList from "../../components/TodoList";
 import { getTodos } from "../../apis/todo";
+import useTodos from "../../hooks/useTodos";
+import Loading from "../../components/Common/Loading";
 
 function TodoPage() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos, isLoading] = useTodos();
   console.log(todos);
-  // const [isChanged, setIsChanged] = useState(false);
-
-  useEffect(() => {
-    const fetchTodos = async () => {
-      const res = await getTodos();
-      setTodos(res);
-    };
-
-    fetchTodos();
-  }, []);
 
   return (
     <S.Wrapper>
       <TodoHeader todos={todos} setTodos={setTodos} />
-      <TodoList todos={todos} setTodos={setTodos} />
+      {isLoading ? <Loading /> : <TodoList todos={todos} setTodos={setTodos} />}
     </S.Wrapper>
   );
 }
