@@ -41,7 +41,7 @@ function SignForm({ signin }) {
     <S.Form onSubmit={handleSubmit}>
       <S.IconWrapper>
         <AiOutlineLogin />
-        <S.SigninText>Sign up</S.SigninText>
+        <S.SigninText>{signin ? "Sign in" : "Sign up"}</S.SigninText>
       </S.IconWrapper>
       <S.InputArea>
         <S.Label htmlFor="email">이메일</S.Label>
@@ -69,6 +69,11 @@ function SignForm({ signin }) {
         )}
       </S.InputArea>
       <S.ButtonWrapper>
+        {signin ? (
+          <S.NavigateButton to="/signup">회원가입 하러가기</S.NavigateButton>
+        ) : (
+          <S.NavigateButton to="/signin">로그인 하러가기</S.NavigateButton>
+        )}
         <Button
           type="submit"
           disabled={!isValidInput.email || !isValidInput.password}
