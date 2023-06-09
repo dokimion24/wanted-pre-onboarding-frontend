@@ -36,7 +36,7 @@ function TodoItem({ todo, todos, setTodos }) {
 
   return (
     <S.Todo>
-      <label>
+      <S.Label>
         <input
           type="checkbox"
           checked={isChecked}
@@ -53,9 +53,9 @@ function TodoItem({ todo, todos, setTodos }) {
             />
           </>
         ) : (
-          <span>{todo.todo}</span>
+          <S.TodoText>{todo.todo}</S.TodoText>
         )}
-      </label>
+      </S.Label>
       {isClickedUpdateBtn ? (
         <S.ButtonWrapper>
           <Button
