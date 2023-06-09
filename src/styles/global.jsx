@@ -21,4 +21,11 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     cursor: pointer;
   }
+
+  a {
+    color: #000;
+    text-decoration: none; 
+    outline: none
+  }
+
 `;
