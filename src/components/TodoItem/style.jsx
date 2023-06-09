@@ -14,7 +14,6 @@ export const ButtonWrapper = styled.div`
   justify-content: space-between;
 `;
 
-
 export const InputArea = styled.div`
   display: flex;
   align-items: center;
@@ -29,4 +28,19 @@ export const Input = styled.input`
   &:focus {
     outline: none;
   }
+`;
+
+export const TodoText = styled.div`
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
+export const CheckBox = styled.input`
+  display: block;
+`;
+
+export const Label = styled.label`
+  display: flex;
 `;
