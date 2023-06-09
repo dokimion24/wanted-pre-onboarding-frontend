@@ -3,11 +3,11 @@ import * as S from "./style";
 
 import TodoItem from "../TodoItem";
 
-function TodoList({ todos, setIsChanged }) {
+function TodoList({ todos, setTodos }) {
   return (
     <ul>
       {todos.map((todo) => (
-        <TodoItem key={todo.id} todo={todo} setIsChanged={setIsChanged} />
+        <TodoItem key={todo.id} todo={todo} todos={todos} setTodos={setTodos} />
       ))}
     </ul>
   );

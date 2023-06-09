@@ -3,7 +3,7 @@ import { Button } from "../../styles/common";
 import { deleteTodo, updateTodo } from "../../apis/todo";
 import * as S from "./style";
 
-function TodoItem({ todo, setIsChanged }) {
+function TodoItem({ todo, todos, setTodos }) {
   const [isClickedUpdateBtn, setIsClickedUpdateBtn] = useState(false);
   const [newTodo, setNewTodo] = useState(todo.todo);
   const [isChecked, setIsChecked] = useState(todo.isCompleted);
@@ -16,7 +16,7 @@ function TodoItem({ todo, setIsChanged }) {
   const handleClickDelete = async (id) => {
     console.log(id);
     await deleteTodo(id);
-    setIsChanged((prev) => !prev);
+    setTodos(todos.filter((item) => item.id !== id));
   };
 
   const handleChange = (e) => {
@@ -25,8 +25,7 @@ function TodoItem({ todo, setIsChanged }) {
 
   const handleClickUpdate = async (todo, isCompleted, id) => {
     const res = await updateTodo(todo, isCompleted, id);
-    console.log(res);
-    setIsChanged((prev) => !prev);
+    setTodos(todos.map((item) => (item.id === id ? { ...res } : item)));
     setIsClickedUpdateBtn((prev) => !prev);
   };
 

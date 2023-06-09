@@ -3,13 +3,14 @@ import { Button } from "../../styles/common";
 import * as S from "./style";
 import { createTodo } from "../../apis/todo";
 
-function TodoHeader({ setIsChanged }) {
+function TodoHeader({ todos, setTodos }) {
   const [todo, setTodo] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await createTodo(todo);
-    setIsChanged((prev) => !prev);
+    const res = await createTodo(todo);
+    console.log(res);
+    setTodos([...todos, res]);
   };
 
   const handleChange = (e) => {

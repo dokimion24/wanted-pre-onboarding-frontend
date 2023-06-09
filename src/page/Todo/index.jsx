@@ -6,9 +6,8 @@ import { getTodos } from "../../apis/todo";
 
 function TodoPage() {
   const [todos, setTodos] = useState([]);
-  const [isChanged, setIsChanged] = useState(false);
-
-  console.log({ isChanged });
+  console.log(todos);
+  // const [isChanged, setIsChanged] = useState(false);
 
   useEffect(() => {
     const fetchTodos = async () => {
@@ -17,12 +16,12 @@ function TodoPage() {
     };
 
     fetchTodos();
-  }, [isChanged]);
+  }, []);
 
   return (
     <S.Wrapper>
-      <TodoHeader setIsChanged={setIsChanged} />
-      <TodoList setIsChanged={setIsChanged} todos={todos} />
+      <TodoHeader todos={todos} setTodos={setTodos} />
+      <TodoList todos={todos} setTodos={setTodos} />
     </S.Wrapper>
   );
 }
