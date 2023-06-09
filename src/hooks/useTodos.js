@@ -7,7 +7,7 @@ function useTodos() {
   const [isLoading, setIsLoading] = useState(true);
   const fetchTodos = async () => {
     setIsLoading(true);
-    const { data } = await getTodos();
+    const data = await getTodos();
     setTodos(data);
     setIsLoading(false);
   };
