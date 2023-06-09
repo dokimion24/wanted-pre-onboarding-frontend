@@ -5,7 +5,7 @@ import SignForm from "../../components/SignForm";
 function SignupPage() {
   return (
     <S.Wrapper>
-      <SignForm />
+      <SignForm signin={false} />
     </S.Wrapper>
   );
 }
