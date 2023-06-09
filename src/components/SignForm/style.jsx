@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Form = styled.form`
   padding: 0 32px;
@@ -17,6 +18,7 @@ export const SigninText = styled.div`
 `;
 
 export const InputArea = styled.div`
+  height: 72px;
   margin-bottom: 16px;
   display: flex;
   flex-direction: column;
@@ -39,11 +41,19 @@ export const Input = styled.input`
 
 export const ButtonWrapper = styled.div`
   display: flex;
-  justify-content: end;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const ErrorMessage = styled.div`
   width: 100%;
   font-size: 12px;
   color: #d9381e;
+`;
+
+export const NavigateButton = styled(Link)`
+  &:hover {
+    color: #3399ff;
+    text-decoration: underline;
+  }
 `;
