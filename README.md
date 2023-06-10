@@ -13,4 +13,4 @@ npm start
 ```
 
 ### 데모 영상 (배포 링크 대체)
-- 배포링크[https://wanted-pre-onboarding-frontend-mg3j1xu81-dokimion0.vercel.app/]
+- [배포링크](https://wanted-pre-onboarding-frontend-mg3j1xu81-dokimion0.vercel.app/)
