@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { Button } from "../../styles/common";
-import * as S from "./style";
-import { createTodo } from "../../apis/todo";
+import React, { useState } from 'react';
+import { Button } from '../../styles/common';
+import * as S from './style';
+import { createTodo } from '../../apis/todo';
 
 function TodoHeader({ todos, setTodos }) {
-  const [todo, setTodo] = useState("");
+  const [todo, setTodo] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();

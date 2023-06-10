@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Button } from "../../styles/common";
-import { deleteTodo, updateTodo } from "../../apis/todo";
-import * as S from "./style";
+import React, { useState } from 'react';
+import { Button } from '../../styles/common';
+import { deleteTodo, updateTodo } from '../../apis/todo';
+import * as S from './style';
 
 function TodoItem({ todo, todos, setTodos }) {
   const [isClickedUpdateBtn, setIsClickedUpdateBtn] = useState(false);
@@ -62,7 +62,8 @@ function TodoItem({ todo, todos, setTodos }) {
             onClick={() =>
               handleClickUpdate(newTodo, todo.isCompleted, todo.id)
             }
-            data-testid="submit-button">
+            data-testid="submit-button"
+          >
             제출
           </Button>
           <Button onClick={handleClickCancel} data-testid="cancel-button">
@@ -73,12 +74,14 @@ function TodoItem({ todo, todos, setTodos }) {
         <S.ButtonWrapper>
           <Button
             onClick={() => setIsClickedUpdateBtn((prev) => !prev)}
-            data-testid="modify-button">
+            data-testid="modify-button"
+          >
             수정
           </Button>
           <Button
             onClick={() => handleClickDelete(todo.id)}
-            data-testid="delete-button">
+            data-testid="delete-button"
+          >
             삭제
           </Button>
         </S.ButtonWrapper>

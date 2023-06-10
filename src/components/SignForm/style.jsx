@@ -1,6 +1,5 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const IconWrapper = styled.div`
   font-size: 32px;
@@ -31,7 +30,6 @@ export const Label = styled.label`
 export const Input = styled.input`
   width: 100%;
   height: 40px;
-
 `;
 
 export const ButtonWrapper = styled.div`

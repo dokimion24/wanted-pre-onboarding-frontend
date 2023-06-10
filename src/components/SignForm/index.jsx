@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import * as S from "./style";
-import { AiOutlineLogin } from "react-icons/ai";
-import { Button } from "../../styles/common";
-import { useValidateInput } from "../../hooks/useValidteInput";
-import { signupUser, signinUser } from "../../apis/auth";
+import React, { useState } from 'react';
+import * as S from './style';
+import { AiOutlineLogin } from 'react-icons/ai';
+import { Button } from '../../styles/common';
+import { useValidateInput } from '../../hooks/useValidteInput';
+import { signupUser, signinUser } from '../../apis/auth';
 
-import { useRedirect } from "../../hooks/useRedirect";
+import { useRedirect } from '../../hooks/useRedirect';
 
 function SignForm({ signin }) {
   const validateInput = useValidateInput();
   const redirect = useRedirect();
 
-  const [userInput, setUserInput] = useState({ email: "", password: "" });
+  const [userInput, setUserInput] = useState({ email: '', password: '' });
   const [isValidInput, setIsValidInput] = useState({
     email: false,
     password: false,
@@ -38,10 +38,10 @@ function SignForm({ signin }) {
   };
 
   return (
-    <S.Form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <S.IconWrapper>
         <AiOutlineLogin />
-        <S.SigninText>{signin ? "Sign in" : "Sign up"}</S.SigninText>
+        <S.SigninText>{signin ? 'Sign in' : 'Sign up'}</S.SigninText>
       </S.IconWrapper>
       <S.InputArea>
         <S.Label htmlFor="email">이메일</S.Label>
@@ -77,11 +77,12 @@ function SignForm({ signin }) {
         <Button
           type="submit"
           disabled={!isValidInput.email || !isValidInput.password}
-          data-testid="signin-button">
-          {signin ? "로그인" : "회원가입"}
+          data-testid="signin-button"
+        >
+          {signin ? '로그인' : '회원가입'}
         </Button>
       </S.ButtonWrapper>
-    </S.Form>
+    </form>
   );
 }
 
