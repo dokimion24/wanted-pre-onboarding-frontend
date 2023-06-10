@@ -1,12 +1,12 @@
-import React from "react";
-import * as S from "./style";
-import SignForm from "../../components/SignForm";
+import React from 'react';
+import SignForm from '../../components/SignForm';
+import { Wrapper } from '../../styles/common';
 
 function SignupPage() {
   return (
-    <S.Wrapper>
+    <Wrapper>
       <SignForm signin={false} />
-    </S.Wrapper>
+    </Wrapper>
   );
 }
 
