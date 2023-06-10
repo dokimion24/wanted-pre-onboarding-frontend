@@ -1,9 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Form = styled.form`
-  padding: 0 32px;
-`;
 
 export const IconWrapper = styled.div`
   font-size: 32px;
@@ -35,8 +32,6 @@ export const Input = styled.input`
   width: 100%;
   height: 40px;
 
-  &:focus {
-  }
 `;
 
 export const ButtonWrapper = styled.div`
