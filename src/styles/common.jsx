@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Button = styled.button`
   font-weight: bold;
@@ -15,4 +15,10 @@ export const Button = styled.button`
     background: #ccc;
     cursor: no-drop;
   }
+`;
+
+export const Wrapper = styled.div`
+  width: 100%;
+  position: absolute;
+  top: 10%;
 `;
