@@ -1,7 +1,13 @@
-import React from "react";
+import React from 'react';
+import SignForm from '../../components/SignForm';
+import { Wrapper } from '../../styles/common';
 
 function SignupPage() {
-  return <div>SignupPage</div>;
+  return (
+    <Wrapper>
+      <SignForm signin={false} />
+    </Wrapper>
+  );
 }
 
 export default SignupPage;
