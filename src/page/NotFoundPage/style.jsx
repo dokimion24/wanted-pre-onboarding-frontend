@@ -1,8 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { Wrapper } from '../../styles/common';
 
-export const Wrapper = styled.div`
-  width: 100%;
-  position: absolute;
+export const NotFoundWrapper = styled(Wrapper)`
   text-align: center;
-  top: 10%;
 `;
