@@ -27,6 +27,6 @@ npm start
 ![todo](https://github.com/dokimion24/wanted-pre-onboarding-frontend/assets/92348492/0d43c7f0-5b2f-4b8b-aa7c-0196dbf37a1d)
 
 
--redirect
+- redirect
 ![redirect](https://github.com/dokimion24/wanted-pre-onboarding-frontend/assets/92348492/43899758-4ebb-46f2-a460-06de13efac6a)
 
