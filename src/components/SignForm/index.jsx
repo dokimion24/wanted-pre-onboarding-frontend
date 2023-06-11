@@ -44,25 +44,25 @@ function SignForm({ signin }) {
         <S.SigninText>{signin ? 'Sign in' : 'Sign up'}</S.SigninText>
       </S.IconWrapper>
       <S.InputArea>
-        <S.Label htmlFor="email">이메일</S.Label>
+        <S.Label htmlFor='email'>이메일</S.Label>
         <S.Input
-          id="email"
+          id='email'
           onChange={handleChange}
           value={userInput.email}
-          data-testid="email-input"
+          data-testid='email-input'
         />
         {!isValidInput.email && (
           <S.ErrorMessage>이메일에 @을 포함하세요</S.ErrorMessage>
         )}
       </S.InputArea>
       <S.InputArea>
-        <S.Label htmlFor="password">비밀번호</S.Label>
+        <S.Label htmlFor='password'>비밀번호</S.Label>
         <S.Input
-          id="password"
-          type="password"
+          id='password'
+          type='password'
           onChange={handleChange}
           value={userInput.password}
-          data-testid="password-input"
+          data-testid='password-input'
         />
         {!isValidInput.password && (
           <S.ErrorMessage>비밀번호를 8자리 이상 입력하세요</S.ErrorMessage>
@@ -70,15 +70,14 @@ function SignForm({ signin }) {
       </S.InputArea>
       <S.ButtonWrapper>
         {signin ? (
-          <S.NavigateButton to="/signup">회원가입 하러가기</S.NavigateButton>
+          <S.NavigateButton to='/signup'>회원가입 하러가기</S.NavigateButton>
         ) : (
-          <S.NavigateButton to="/signin">로그인 하러가기</S.NavigateButton>
+          <S.NavigateButton to='/signin'>로그인 하러가기</S.NavigateButton>
         )}
         <Button
-          type="submit"
+          type='submit'
           disabled={!isValidInput.email || !isValidInput.password}
-          data-testid="signin-button"
-        >
+          data-testid={signin ? 'signin-button' : 'signup-button'}>
           {signin ? '로그인' : '회원가입'}
         </Button>
       </S.ButtonWrapper>
