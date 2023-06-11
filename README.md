@@ -13,18 +13,19 @@ npm start
 ```
 
 ### 데모 영상
-- [배포링크](https://wanted-pre-onboarding-frontend-mg3j1xu81-dokimion0.vercel.app/)
+- [배포링크](https://wanted-pre-onboarding-frontend-tan-nine.vercel.app/)
 
 
 
 1. 로그인 / 회원가입
-![auth](https://github.com/dokimion24/wanted-pre-onboarding-frontend/assets/92348492/73cc70c3-1dc1-409f-8ca9-19afe1300981)
+![auth](https://github.com/dokimion24/wanted-pre-onboarding-frontend/assets/92348492/a4439696-2b87-46fe-bb52-cc43fde0607b)
+
 
 
 2. TODO LIST
 - todo
-![todo](https://github.com/dokimion24/wanted-pre-onboarding-frontend/assets/92348492/235be9f2-ace8-4e55-9d2b-233e72db6ac0)
+![todo](https://github.com/dokimion24/wanted-pre-onboarding-frontend/assets/92348492/2eeae75d-f6d7-496c-9a74-ea4997c3924b)
 
 -redirect
-![redirect](https://github.com/dokimion24/wanted-pre-onboarding-frontend/assets/92348492/64fcf3e5-6d33-49a4-8a99-df641a007e75)
+![redirect](https://github.com/dokimion24/wanted-pre-onboarding-frontend/assets/92348492/c7c8458f-0731-4158-9426-b06fc5b983aa)
 
