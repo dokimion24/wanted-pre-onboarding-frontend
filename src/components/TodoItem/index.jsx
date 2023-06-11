@@ -57,9 +57,7 @@ function TodoItem({ todo, todos, setTodos }) {
       {isClickedUpdateBtn ? (
         <S.ButtonWrapper>
           <Button
-            onClick={() =>
-              handleClickUpdate(newTodo, isChecked, todo.id)
-            }
+            onClick={() => handleClickUpdate(newTodo, isChecked, todo.id)}
             data-testid='submit-button'>
             제출
           </Button>

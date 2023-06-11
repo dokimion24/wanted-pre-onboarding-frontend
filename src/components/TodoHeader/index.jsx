@@ -25,10 +25,10 @@ function TodoHeader({ todos, setTodos }) {
           <S.Input
             onChange={handleChange}
             value={todo}
-            type="text"
-            data-testid="new-todo-input"
+            type='text'
+            data-testid='new-todo-input'
           />
-          <Button type="submit" data-testid="new-todo-add-button">
+          <Button type='submit' data-testid='new-todo-add-button'>
             추가
           </Button>
         </form>
