@@ -30,7 +30,7 @@ npm start
 - redirect
 ![redirect](https://github.com/dokimion24/wanted-pre-onboarding-frontend/assets/92348492/43899758-4ebb-46f2-a460-06de13efac6a)
 
-``
+
 ### 디렉터리 구조
 ```
 📦src
@@ -128,3 +128,66 @@ export default PrivateRoute;
 ```
 - 사용자가 /todo로 접근했을 때 토큰이 없으면 /sigin 리다이렉트
 - /signup, /signin으로 접근했을 때 토큰이 있으면 /todo 리다이렉트
+
+### Todo fetch
+```jsx
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { getTodos } from '../apis/todo';
+
+function useTodos() {
+  const [todos, setTodos] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const fetchTodos = async () => {
+    setIsLoading(true);
+    const data = await getTodos();
+    setTodos(data);
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    fetchTodos();
+  }, []);
+
+  return [todos, setTodos, isLoading];
+}
+
+export default useTodos;
+
+
+
+import React from 'react';
+import TodoHeader from '../../components/TodoHeader';
+import TodoList from '../../components/TodoList';
+import useTodos from '../../hooks/useTodos';
+import Loading from '../../components/Common/Loading';
+import { Button, Wrapper } from '../../styles/common';
+import * as S from './style';
+import { useNavigate } from 'react-router-dom';
+
+function TodoPage() {
+  const [todos, setTodos, isLoading] = useTodos();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('accessToken');
+    navigate('/signin');
+  };
+
+  return (
+    <Wrapper>
+      <TodoHeader todos={todos} setTodos={setTodos} />
+      {isLoading ? <Loading /> : <TodoList todos={todos} setTodos={setTodos} />}
+      <S.ButtonWrapper>
+        <Button onClick={handleLogout}>로그아웃</Button>
+      </S.ButtonWrapper>
+    </Wrapper>
+  );
+}
+
+export default TodoPage;
+
+
+```
+- Todo fetch 커스텀 훅 작성
+- 페이지 컴포넌트에서 데이터를 가져오고 props로 전달
