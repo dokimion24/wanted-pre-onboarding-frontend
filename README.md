@@ -30,8 +30,9 @@ npm start
 - redirect
 ![redirect](https://github.com/dokimion24/wanted-pre-onboarding-frontend/assets/92348492/43899758-4ebb-46f2-a460-06de13efac6a)
 
-
+``
 ### 디렉터리 구조
+```
 📦src
  ┣ 📂apis
  ┃ ┣ 📜auth.js
@@ -83,7 +84,7 @@ npm start
  ┃ ┗ 📜global.jsx
  ┣ 📜App.js
  ┗ 📜index.js
-
+```
  - 컴포넌트 폴더 안에 style.jsx index.jsx
  - 페이지 컴포넌트는 src/page에서 관리하고 페이지에서 필요한 컴포넌트는 src/component에서 관리하도록 설계
 
